@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Responsiva con Imágenes como Botones</title>
+    <style>
+        /* CSS integrado */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('img/fondo.jpg'); /* Ruta de la imagen de fondo */
+            background-size: contain; /* Ajuste para hacer la imagen más compacta */
+            background-position: center center; /* Centrar la imagen */
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Ajuste del espacio entre botones */
+            width: 100%;
+            max-width: 180px; /* Tamaño máximo ajustado para íconos un poco más grandes */
+        }
+
+        .button-image {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+        .button-image:hover {
+            transform: scale(1.05); /* Reducción del efecto de zoom para móviles */
+        }
+
+        .loading {
+            margin-top: 20px; /* Espacio entre los botones y la imagen de carga */
+        }
+
+        .loading img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px; /* Tamaño de fuente adecuado para móviles */
+            position: relative;
+            bottom: 0;
+        }
+
+        /* Media query para pantallas más pequeñas */
+        @media (max-width: 480px) {
+            .buttons {
+                gap: 10px;
+                max-width: 150px; /* Ajuste de tamaño máximo para pantallas muy pequeñas */
+            }
+
+            .footer {
+                font-size: 12px; /* Fuente más pequeña en pantallas muy pequeñas */
+            }
+
+            body {
+                background-size: cover; /* Ajuste para pantallas muy pequeñas */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Imágenes como botones -->
+        <div class="buttons">
+            <a href="https://radiopowercolombia.github.io/matadoramix/">
+                <img src="img/imagen1.png" alt="Enlace 1" class="button-image">
+            </a>
+            <a href="https://radiopowercolombia.github.io/CHAMPETA/">
+                <img src="img/imagen2.png" alt="Enlace 2" class="button-image">
+            </a>
+        </div>
+        <!-- Imagen de carga -->
+        <div class="loading">
+            <img src="img/loading.gif" alt="Cargando">
+        </div>
+    </div>
+
+    <!-- Texto en la parte inferior -->
+    <footer class="footer">
+        <p>Copyright © 2024 RADIO POWER.</p>
+        <p>radiopowercolombia@gmail.com</p>
+    </footer>
+</body>
+</html>
